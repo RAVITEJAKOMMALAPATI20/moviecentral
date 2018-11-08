@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import './css/Application.scss'
+import Navigation from "./components/Navigation";
+import LogInSignIn from "./components/LogInSignIn";
+import Home from './components/Home'
+import LogninPage from "./components/LogninPage";
+import MovieCard from "./components/MovieCard";
+import Search from "./components/Search";
+import {BrowserRouter} from "react-router-dom";
+import WebRoutes from './components/WebRoutes'
 class App extends Component {
   render() {
     return (
+        <BrowserRouter>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <header className={"Header"}>
+              <Navigation/>
+              <Search/>
+          </header>
+
+          <WebRoutes/>
       </div>
+        </BrowserRouter>
     );
   }
 }
